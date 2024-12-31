@@ -1,0 +1,10 @@
+{
+  "name": "wp-core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Krivoshchekov Artem <therawlex@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky"
+  }
+}

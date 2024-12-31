@@ -1,0 +1,32 @@
+{
+  "name": "riskyworks/wp-core",
+  "autoload": {
+    "psr-4": {
+      "WpCore\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Krivoshchekov Artem",
+      "email": "therawlex@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "phpunit -c phpunit.dist.xml",
+    "test-init": "bash bin/install-wp-tests.sh wordpress_test root root localhost latest",
+    "pot": "wp i18n make-pot . languages/product-code-manager.pot",
+    "lint": "vendor/bin/phpstan analyse -c phpstan.neon --debug --memory-limit=1G",
+    "phpstan": "phpstan analyse src --level=7",
+    "phpstan:wp": "phpstan analyse src --level=7 --configuration=phpstan.neon",
+    "phpstan:wp:baseline": "phpstan analyse src --level=7 --configuration=phpstan.neon --generate-baseline",
+    "phpstan:wp:baseline:check": "phpstan analyse src --level=7 --configuration=phpstan.neon --generate-baseline --baseline=phpstan-baseline.neon"
+  },
+  "require-dev": {
+    "yoast/phpunit-polyfills": "^3.0",
+    "phpunit/phpunit": "^11.5",
+    "phpstan/phpstan": "^2.1",
+    "szepeviktor/phpstan-wordpress": "^2.0",
+    "php-stubs/woocommerce-stubs": "^9.5",
+    "php-stubs/wp-cli-stubs": "^2.11"
+  }
+}
